@@ -4,4 +4,5 @@ class User < ApplicationRecord
     belongs_to :career
     has_many :articles
     has_many :role
+    has_many :tutorials
 end
