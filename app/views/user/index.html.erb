@@ -1,0 +1,18 @@
+<% if ! @users.empty? %>
+    <% @users.each do |user| %>
+        <p>Nombre: <%= user.name %>, Password: <%= user.password_digest %></p>
+        <ul>
+          <li>
+            <% if ! user.articles.empty? %>
+                <% user.articles.each do |article| %>
+                    <p>Título: <%= article.title %>, Body: <%= article.body %></p>
+                <% end %>
+            <% else %>
+                No hay posts
+            <% end %>
+          </li>
+        </ul>
+    <% end %>
+<% else %>
+    No hay usuarios
+<% end %>
