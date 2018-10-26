@@ -19,7 +19,7 @@ gem 'puma', '~> 3.11'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'pg'
-
+gem 'knock', '~> 2.1', '>= 2.1.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -31,7 +31,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
+gem 'active_model_serializers','~> 0.10.0' 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
