@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
+    
+    before_action :authenticate_user, only:[:index]
     #protect_from_forgery with: :null_session
+    def index
+        render json: {status:200,msg: 'Autenticado'}
+    end
     def new
         @user = User.new
     end
@@ -7,20 +12,14 @@ class UsersController < ApplicationController
     def create 
         @user = User.new(user_params) 
         if @user.save 
-          session[:user_id] = @user.id 
-          redirect_to '/' 
+          render json: {status: 200,msg: 'Usuario creado'}
         else 
-          redirect_to '/signup' 
+          render json: {status: 400,msg:'Usuario no creado'}
         end 
     end 
 
-    def index
-        @users = User.all
-        render json: User.all
-    end
-
     private
 	  def user_params
-	    params.require(:user).permit(:id, :name, :last_name, :email, :password_digest)
+	    params.require(:user).permit(:name, :last_name, :email, :password,:career_id)
 	  end 
 end
