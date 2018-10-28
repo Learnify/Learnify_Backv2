@@ -6,6 +6,6 @@ class HomeController < ApplicationController
     end
     
     def auth
-       render json: {status:200, msg: "#{current_user.password_digest}"} 
+       render json: {status:200, msg: "Sesion iniciada como #{current_user.name}"} 
     end
 end

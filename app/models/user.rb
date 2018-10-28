@@ -13,4 +13,5 @@ class User < ApplicationRecord
     validates_presence_of :last_name
     validates_presence_of :career_id
     
+    
 end

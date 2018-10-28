@@ -5,9 +5,6 @@ class UsersController < ApplicationController
     def index
         render json: {status:200,msg: 'Autenticado'}
     end
-    def new
-        @user = User.new
-    end
 
     def create 
         @user = User.new(user_params) 
