@@ -25,7 +25,9 @@ gem 'knock', '~> 2.1', '>= 2.1.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'react-rails'
+gem "react_on_rails", "11.0.0"
+gem "webpacker", "~> 3"
+gem 'mini_racer', platforms: :ruby
 gem 'bcrypt-ruby', '~> 3.1.2'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
